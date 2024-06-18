@@ -1,7 +1,6 @@
 import { Box, Button, Container, Typography, styled } from "@mui/material";
-import React, { FC } from "react";
+import { FC } from "react";
 import waterFlowImg from "../../assets/water-flow-img.png";
-import zIndex from "@mui/material/styles/zIndex";
 import { Download } from "@mui/icons-material";
 
 const SectionRoot = styled("section")(({ theme }) => ({
