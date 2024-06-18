@@ -1,12 +1,11 @@
-import { Alert, Button, Typography } from "@mui/material";
+import Banner from "./components/Banner";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-      <Button>click</Button>
-      <Alert variant="filled">
-        <Typography component="h1">Santhoshkumar</Typography>
-      </Alert>
+      <NavBar />
+      <Banner />
     </>
   );
 }
