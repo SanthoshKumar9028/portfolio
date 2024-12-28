@@ -1,0 +1,17 @@
+.SectionHeading {
+  border-bottom: 2px solid gray;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.SectionHeading::after {
+  content: "";
+  position: absolute;
+  bottom: -2.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5px;
+  width: 100px;
+}

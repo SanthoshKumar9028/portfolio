@@ -1,0 +1,20 @@
+.About__MetaDetailsList {
+  width: 322px;
+}
+
+.About__MetaDetailsList li {
+  margin: 0.5rem 0;
+}
+
+.About__MetaDetailsList li:first-child {
+  margin-top: 0;
+}
+
+.About__MetaDetailsList li:last-child {
+  margin-bottom: 0;
+}
+
+.About__MetaDetailsLabel {
+  display: inline-block;
+  width: 90px;
+}

@@ -1,0 +1,18 @@
+.bold {
+  font-weight: bold;
+}
+
+.color-blink-animation {
+  animation-name: colorBlinkKeyframes;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colorBlinkKeyframes {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
