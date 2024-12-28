@@ -79,7 +79,10 @@ const About: FC = () => {
               <li>
                 <Text>
                   <span className="bold About__MetaDetailsLabel">Email: </span>
-                  <Link href="mailto:santhoshkumar9028@gmail.com">
+                  <Link
+                    variant="underline"
+                    href="mailto:santhoshkumar9028@gmail.com"
+                  >
                     santhoshkumar9028@gmail.com
                   </Link>
                 </Text>
@@ -87,7 +90,9 @@ const About: FC = () => {
               <li>
                 <Text>
                   <span className="bold About__MetaDetailsLabel">Phone: </span>
-                  <Link href="tel:9080024160">+91 90800 24160</Link>
+                  <Link variant="underline" href="tel:9080024160">
+                    +91 90800 24160
+                  </Link>
                 </Text>
               </li>
             </ul>

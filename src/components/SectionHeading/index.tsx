@@ -11,11 +11,6 @@ const SectionHeading: FC<HeadingProps> = ({ className, ...rest }) => {
       textAlign="center"
       md={{ fontSize: "4xl" }}
       className={`SectionHeading ${className || ""}`}
-      sm={{
-        "&::after": {
-          backgroundColor: "primary",
-        },
-      }}
       {...rest}
     />
   );

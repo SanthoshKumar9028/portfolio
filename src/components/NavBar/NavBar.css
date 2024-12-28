@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
+  /* bottom: 0; */
   padding: 0.7em;
 }
 
@@ -24,6 +24,7 @@
   height: 54px;
   width: 54px;
   transform: translateX(-200%);
+  display: none;
   justify-content: flex-start;
   opacity: 0;
   transition: opacity 300ms, transform 200ms, width 200ms;
@@ -57,6 +58,7 @@
 .NavBar__MenuList--show .NavBar__MenuItem {
   transform: translateX(0);
   opacity: 1;
+  display: flex;
 }
 
 .NavBar__MenuList--show .NavBar__MenuItem:nth-child(1) {
@@ -86,5 +88,6 @@
   .NavBar__MenuItem {
     transform: translateX(0);
     opacity: 1;
+    display: flex;
   }
 }
