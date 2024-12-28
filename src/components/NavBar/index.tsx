@@ -26,6 +26,7 @@ const NavBar: FC = () => {
           <Button
             className="NavBar_IconBtn"
             borderRadius="full"
+            colorPalette="primary"
             onClick={() => setShowMenus((prv) => !prv)}
           >
             <Icon size="lg">{showMenus ? <MdClose /> : <FaBars />}</Icon>
@@ -37,7 +38,11 @@ const NavBar: FC = () => {
           alignItems="flex-start"
         >
           <Link href="#" variant="plain">
-            <Button rounded="full" className="NavBar__MenuItem">
+            <Button
+              colorPalette="primary"
+              rounded="full"
+              className="NavBar__MenuItem"
+            >
               <Icon size="lg">
                 <FaHome />
               </Icon>
@@ -45,6 +50,7 @@ const NavBar: FC = () => {
             </Button>
           </Link>
           <Button
+            colorPalette="primary"
             rounded="full"
             className="NavBar__MenuItem NavBar__MenuItem--active"
           >
@@ -53,19 +59,31 @@ const NavBar: FC = () => {
             </Icon>
             <span className="NavBar__MenuItemText">About</span>
           </Button>
-          <Button rounded="full" className="NavBar__MenuItem">
+          <Button
+            colorPalette="primary"
+            rounded="full"
+            className="NavBar__MenuItem"
+          >
             <Icon size="lg">
               <FaLayerGroup />
             </Icon>
             <span className="NavBar__MenuItemText">Skills</span>
           </Button>
-          <Button rounded="full" className="NavBar__MenuItem">
+          <Button
+            colorPalette="primary"
+            rounded="full"
+            className="NavBar__MenuItem"
+          >
             <Icon size="lg">
               <FaImages />
             </Icon>
             <span className="NavBar__MenuItemText">Projects</span>
           </Button>
-          <Button rounded="full" className="NavBar__MenuItem">
+          <Button
+            colorPalette="primary"
+            rounded="full"
+            className="NavBar__MenuItem"
+          >
             <Icon size="lg">
               <FaPhoneAlt />
             </Icon>
@@ -75,7 +93,11 @@ const NavBar: FC = () => {
       </HStack>
 
       <Box className="NavBar__ScroolToTop">
-        <Button className="NavBar_IconBtn" borderRadius="full">
+        <Button
+          colorPalette="primary"
+          className="NavBar_IconBtn"
+          borderRadius="full"
+        >
           <Icon size="lg">
             <FaChevronUp />
           </Icon>

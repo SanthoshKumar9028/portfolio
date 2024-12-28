@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "@/components/ui/provider";
+import { ChakraProvider } from "@chakra-ui/react";
 import App from "./App.tsx";
-import "./global.css"
+import { system } from "./theme.ts";
+import "./global.css";
+import { ColorModeProvider } from "./components/ui/color-mode.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider>
-      <App />
-    </Provider>
+    <ChakraProvider value={system}>
+      <ColorModeProvider>
+        <App />
+      </ColorModeProvider>
+    </ChakraProvider>
   </React.StrictMode>
 );

@@ -27,7 +27,7 @@ const Banner: FC = () => {
           I'm MERN Stack Developer
         </Text>
         <HStack>
-          <Button>
+          <Button colorPalette="primary">
             <FaFileDownload /> Resume
           </Button>
         </HStack>
