@@ -16,18 +16,21 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 const Projects: FC = () => {
   return (
     <Container
+      id="projects-section"
+      className="page-section"
       md={{
         maxWidth: "2/3",
       }}
     >
       <SectionHeading>Projects</SectionHeading>
-      <Tabs.Root defaultValue="all">
+      <Tabs.Root defaultValue="recent">
         <Tabs.List>
+          <Tabs.Trigger value="recent">Recent</Tabs.Trigger>
           <Tabs.Trigger value="all">All</Tabs.Trigger>
           <Tabs.Trigger value="company">Company</Tabs.Trigger>
           <Tabs.Trigger value="personal">Personal</Tabs.Trigger>
         </Tabs.List>
-        {["all", "company", "personal"].map((value) => (
+        {["recent", "all", "company", "personal"].map((value) => (
           <Tabs.Content key={value} value={value}>
             <Grid
               gap={3}
@@ -36,9 +39,11 @@ const Projects: FC = () => {
               xl={{ gridTemplateColumns: "1fr 1fr 1fr" }}
             >
               {projects
-                .filter(
-                  (project) => value === "all" || project.category === value
-                )
+                .filter((project) => {
+                  if (value === "all") return true;
+                  if (value === "recent") return project.isRecent;
+                  return project.category === value;
+                })
                 .map((project) => (
                   <GridItem key={project.title}>
                     <Card.Root height="100%">

@@ -4,7 +4,7 @@ const customConfig = defineConfig({
   theme: {
     tokens: {
       colors: {
-        primary: { DEFAULT: { value: "#0563bb" }, 100: { value: "gray" } },
+        primary: { DEFAULT: { value: "#0563bb" }, 100: { value: "#12599c" } },
         secondary: { DEFAULT: { value: "#EE0F0F" } },
         bg: {
           darkBg: { value: "#333" },

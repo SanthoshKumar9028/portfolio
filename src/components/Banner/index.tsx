@@ -1,10 +1,17 @@
 import { FC } from "react";
-import { Button, Container, Heading, HStack, Text } from "@chakra-ui/react";
-import { FaFileDownload } from "react-icons/fa";
+import {
+  Button,
+  Container,
+  Heading,
+  HStack,
+  Link,
+  Text,
+} from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 
 const Banner: FC = () => {
   return (
-    <HStack height="100vh">
+    <HStack height="100vh" id="banner-section" className="page-section">
       <Container
         md={{
           maxWidth: "2/3",
@@ -27,9 +34,11 @@ const Banner: FC = () => {
           I'm MERN Stack Developer
         </Text>
         <HStack>
-          <Button colorPalette="primary">
-            <FaFileDownload /> Resume
-          </Button>
+          <Link href="Santhoshkumar-resume.pdf" target="_blank">
+            <Button colorPalette="primary">
+              Resume <FiExternalLink />
+            </Button>
+          </Link>
         </HStack>
       </Container>
     </HStack>

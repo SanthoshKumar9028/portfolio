@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { MdClose } from "react-icons/md";
 import {
   FaBars,
@@ -12,8 +12,97 @@ import {
 import { Box, Link, HStack, Button, Icon } from "@chakra-ui/react";
 import "./NavBar.css";
 
+const menus = [
+  {
+    id: "banner-section",
+    href: "#",
+    text: "Home",
+    icon: <FaHome />,
+  },
+  {
+    id: "about-section",
+    href: "#",
+    text: "About",
+    icon: <FaUser />,
+  },
+  {
+    id: "skills-section",
+    href: "#",
+    text: "Skills",
+    icon: <FaLayerGroup />,
+  },
+  {
+    id: "projects-section",
+    href: "#",
+    text: "Projects",
+    icon: <FaImages />,
+  },
+  {
+    id: "contact-section",
+    href: "#",
+    text: "Contact",
+    icon: <FaPhoneAlt />,
+  },
+];
+
 const NavBar: FC = () => {
   const [showMenus, setShowMenus] = useState(false);
+  const [showScroolToTop, setShowScroolToTop] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const observer = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find(
+          (entry) => entry.isIntersecting
+        )?.target;
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.id);
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    const sections = document.querySelectorAll(".page-section");
+
+    sections?.forEach((section) => observer.current?.observe(section));
+
+    return () => {
+      sections?.forEach((section) => observer.current?.unobserve(section));
+    };
+  }, []);
+
+  useEffect(() => {
+    const bannerSection = document.getElementById("banner-section");
+    let timmer: number | undefined;
+
+    const handleOnScroll = () => {
+      if (!bannerSection) return;
+
+      const rect = bannerSection.getBoundingClientRect();
+
+      clearTimeout(timmer);
+
+      timmer = setTimeout(() => {
+        if (rect.top < -700) {
+          setShowScroolToTop(true);
+        } else {
+          setShowScroolToTop(false);
+        }
+      }, 250);
+    };
+
+    window.addEventListener("scroll", handleOnScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleOnScroll);
+      clearTimeout(timmer);
+    };
+  }, []);
 
   return (
     <>
@@ -37,66 +126,40 @@ const NavBar: FC = () => {
           flexDirection="column"
           alignItems="flex-start"
         >
-          <Link href="#" variant="plain">
-            <Button
-              colorPalette="primary"
-              rounded="full"
-              className="NavBar__MenuItem"
-            >
-              <Icon size="lg">
-                <FaHome />
-              </Icon>
-              <span className="NavBar__MenuItemText">Home</span>
-            </Button>
-          </Link>
-          <Button
-            colorPalette="primary"
-            rounded="full"
-            className="NavBar__MenuItem NavBar__MenuItem--active"
-          >
-            <Icon size="lg">
-              <FaUser />
-            </Icon>
-            <span className="NavBar__MenuItemText">About</span>
-          </Button>
-          <Button
-            colorPalette="primary"
-            rounded="full"
-            className="NavBar__MenuItem"
-          >
-            <Icon size="lg">
-              <FaLayerGroup />
-            </Icon>
-            <span className="NavBar__MenuItemText">Skills</span>
-          </Button>
-          <Button
-            colorPalette="primary"
-            rounded="full"
-            className="NavBar__MenuItem"
-          >
-            <Icon size="lg">
-              <FaImages />
-            </Icon>
-            <span className="NavBar__MenuItemText">Projects</span>
-          </Button>
-          <Button
-            colorPalette="primary"
-            rounded="full"
-            className="NavBar__MenuItem"
-          >
-            <Icon size="lg">
-              <FaPhoneAlt />
-            </Icon>
-            <span className="NavBar__MenuItemText">Contact</span>
-          </Button>
+          {menus.map((menu) => (
+            <Link key={menu.id} href={menu.href} variant="plain">
+              <Button
+                colorPalette="primary"
+                rounded="full"
+                className={`NavBar__MenuItem ${
+                  activeSection === menu.id ? "NavBar__MenuItem--active" : ""
+                }`}
+              >
+                <Icon size="lg">{menu.icon}</Icon>
+                <span className="NavBar__MenuItemText">{menu.text}</span>
+              </Button>
+            </Link>
+          ))}
         </HStack>
       </HStack>
 
-      <Box className="NavBar__ScroolToTop">
+      <Box
+        className={`NavBar__ScroolToTop ${
+          showScroolToTop ? "NavBar__ScroolToTop--active" : ""
+        }`}
+      >
         <Button
           colorPalette="primary"
           className="NavBar_IconBtn"
           borderRadius="full"
+          onClick={() => {
+            if (document.scrollingElement) {
+              document.scrollingElement?.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
         >
           <Icon size="lg">
             <FaChevronUp />

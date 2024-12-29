@@ -13,6 +13,13 @@
   right: 0;
   bottom: 0;
   padding: 0.7em;
+  transform: translateY(150%);
+  transition: transform 250ms;
+}
+
+.NavBar__ScroolToTop--active {
+  bottom: 0;
+  transform: translateY(0);
 }
 
 .NavBar_IconBtn {

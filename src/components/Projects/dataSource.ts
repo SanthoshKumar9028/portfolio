@@ -8,6 +8,7 @@ export interface IProject {
   content: string;
   category: "company" | "personal";
   src: string;
+  isRecent?: boolean;
   link?: {
     website?: string;
     github?: string;
@@ -21,6 +22,7 @@ export const projects: IProject[] = [
       "SharePoint based React Webpart application to track, manage and report incidents.",
     category: "company",
     src: cpImage,
+    isRecent: true,
     link: {
       website: "https://www.convergepoint.com/incident-management-software/",
     },
@@ -31,6 +33,7 @@ export const projects: IProject[] = [
       "SharePoint based React Webpart application for managing conflicts within the organization.",
     category: "company",
     src: cpImage,
+    isRecent: true,
     link: {
       website: "https://www.convergepoint.com/conflict-of-interest-software",
     },
@@ -41,6 +44,7 @@ export const projects: IProject[] = [
       "SharePoint based React Webpart application for managing contracts within and between the organization.",
     category: "company",
     src: cpImage,
+    isRecent: true,
     link: {
       website: "https://www.convergepoint.com/contract-management-software",
     },

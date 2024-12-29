@@ -25,6 +25,8 @@ import {
 const Skills: FC = () => {
   return (
     <Container
+      id="skills-section"
+      className="page-section"
       md={{
         maxWidth: "2/3",
       }}

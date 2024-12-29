@@ -21,6 +21,7 @@ import ProfilePhoto from "@/assets/passport-size-photo.jpg";
 import SectionHeading from "../SectionHeading";
 import "./About.css";
 import { FaCheckCircle, FaCircle } from "react-icons/fa";
+import dataSource from "@/dataSource";
 
 const CustomTimelineConnector: FC<TimelineConnectorProps> = (props) => (
   <TimelineConnector _light={{ bg: "lightgray" }} {...props} />
@@ -29,6 +30,8 @@ const CustomTimelineConnector: FC<TimelineConnectorProps> = (props) => (
 const About: FC = () => {
   return (
     <Container
+      id="about-section"
+      className="page-section"
       md={{
         maxWidth: "2/3",
       }}
@@ -62,7 +65,7 @@ const About: FC = () => {
                     Fullname:{" "}
                   </span>
                   <span className="About__MetaDetailsValue">
-                    Santhoshkumar S
+                    {dataSource.profile.fullName}
                   </span>
                 </Text>
               </li>
@@ -72,7 +75,7 @@ const About: FC = () => {
                     Birthday:{" "}
                   </span>
                   <span className="About__MetaDetailsValue" title="DD/MM/YYYY">
-                    06/02/1999
+                    {dataSource.profile.dob}
                   </span>
                 </Text>
               </li>
@@ -81,17 +84,21 @@ const About: FC = () => {
                   <span className="bold About__MetaDetailsLabel">Email: </span>
                   <Link
                     variant="underline"
-                    href="mailto:santhoshkumar9028@gmail.com"
+                    target="_blank"
+                    href={`mailto:${dataSource.profile.email.value}`}
                   >
-                    santhoshkumar9028@gmail.com
+                    {dataSource.profile.email.text}
                   </Link>
                 </Text>
               </li>
               <li>
                 <Text>
                   <span className="bold About__MetaDetailsLabel">Phone: </span>
-                  <Link variant="underline" href="tel:9080024160">
-                    +91 90800 24160
+                  <Link
+                    variant="underline"
+                    href={`tel:${dataSource.profile.mobile.value}`}
+                  >
+                    {dataSource.profile.mobile.text}
                   </Link>
                 </Text>
               </li>
@@ -101,7 +108,7 @@ const About: FC = () => {
                 <Text>
                   <span className="bold About__MetaDetailsLabel">Degree: </span>
                   <span className="About__MetaDetailsValue">
-                    Master of Computer Application
+                    {dataSource.profile.education.highestDegree}
                   </span>
                 </Text>
               </li>
@@ -109,7 +116,7 @@ const About: FC = () => {
                 <Text>
                   <span className="bold About__MetaDetailsLabel">Role: </span>
                   <span className="About__MetaDetailsValue">
-                    Software Developer
+                    {dataSource.profile.role}
                   </span>
                 </Text>
               </li>
@@ -117,7 +124,7 @@ const About: FC = () => {
                 <Text>
                   <span className="bold About__MetaDetailsLabel">City: </span>
                   <span className="About__MetaDetailsValue">
-                    Puducherry, India
+                    {dataSource.profile.city}
                   </span>
                 </Text>
               </li>

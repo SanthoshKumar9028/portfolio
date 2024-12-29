@@ -11,11 +11,14 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
+import dataSource from "@/dataSource";
 import SectionHeading from "../SectionHeading";
 
 const Contact: FC = () => {
   return (
     <Container
+      id="contact-section"
+      className="page-section"
       md={{
         maxWidth: "2/3",
       }}
@@ -36,8 +39,11 @@ const Contact: FC = () => {
               <FaPhoneAlt />
             </Icon>
             <Text>Call me at</Text>
-            <Link variant="underline" href="tel:9080024160">
-              +91 90800 24160
+            <Link
+              variant="underline"
+              href={`tel:${dataSource.profile.mobile.value}`}
+            >
+              {dataSource.profile.mobile.text}
             </Link>
           </VStack>
           <VStack>
@@ -45,8 +51,11 @@ const Contact: FC = () => {
               <MdMail />
             </Icon>
             <Text>Mail me at</Text>
-            <Link variant="underline" href="mailto:santhoshkumar9028@gmail.com">
-              santhoshkumar9028@gmail.com
+            <Link
+              variant="underline"
+              href={`mailto:${dataSource.profile.email.value}`}
+            >
+              {dataSource.profile.email.text}
             </Link>
           </VStack>
           <VStack>
@@ -55,10 +64,11 @@ const Contact: FC = () => {
             </Icon>
             <Text>Reach me in LinkedIn</Text>
             <Link
+              target="_blank"
               variant="underline"
-              href="http://www.linkedin.com/in/santhoshkumar9028"
+              href={dataSource.profile.linkedIn.value}
             >
-              santhoshkumar9028
+              {dataSource.profile.linkedIn.text}
             </Link>
           </VStack>
           <VStack>
@@ -67,10 +77,11 @@ const Contact: FC = () => {
             </Icon>
             <Text>Reach me in Github</Text>
             <Link
+              target="_blank"
               variant="underline"
-              href="https://github.com/SanthoshKumar9028"
+              href={dataSource.profile.github.value}
             >
-              SanthoshKumar9028
+              {dataSource.profile.github.text}
             </Link>
           </VStack>
         </Grid>
