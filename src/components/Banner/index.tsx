@@ -7,12 +7,10 @@ import {
   HStack,
   Image,
   Link,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 import "./Banner.css";
-import techPersonImage from "@/assets/tech-person.png";
 import abstractDigitalBackground from "@/assets/abstract-digital-grid-black-background.jpg";
 import dataSource from "@/dataSource";
 
