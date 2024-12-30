@@ -80,8 +80,7 @@ const Banner: FC = () => {
         </HStack>
         <HStack>
           <Link
-            // href="https://github.com/SanthoshKumar9028/portfolio/blob/main/public/Santhoshkumar.pdf"
-            href="/portfolio/src/assets/Santhoshkumar.pdf"
+            href="https://github.com/SanthoshKumar9028/portfolio/blob/main/public/Santhoshkumar.pdf"
             target="_blank"
           >
             <Button colorPalette="primary">
