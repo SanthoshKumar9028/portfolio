@@ -47,7 +47,7 @@ const Footer: FC = () => {
         </Heading>
         <Text my="6" fontSize="1xl">
           You have reached the end of my portfolio, all the above details are
-          100% correct. It's not copied from others. If you wanna learn more
+          belongs to me. It's not copied from others. If you wanna learn more
           about me please reach out to me.
         </Text>
         <Heading my="6" sm={{ fontSize: "2xl" }}>
@@ -61,9 +61,7 @@ const Footer: FC = () => {
               target="_blank"
               color="white"
             >
-              <IconButton rounded="full">
-                {socialLink.icon}
-              </IconButton>
+              <IconButton rounded="full">{socialLink.icon}</IconButton>
             </Link>
           ))}
         </Stack>

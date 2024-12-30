@@ -21,8 +21,22 @@ import {
   tools,
   webTechnologies,
 } from "./dataSource";
+import useInViewport from "@/hooks/useInView";
 
 const Skills: FC = () => {
+  const [plRef, plRefIsinView] = useInViewport<HTMLDivElement>({
+    once: true,
+  });
+  const [wtRef, wtRefIsinView] = useInViewport<HTMLDivElement>({
+    once: true,
+  });
+  const [toolsRef, toolsRefIsinView] = useInViewport<HTMLDivElement>({
+    once: true,
+  });
+  const [dataBasesRef, dataBasesRefIsinView] = useInViewport<HTMLDivElement>({
+    once: true,
+  });
+
   return (
     <Container
       id="skills-section"
@@ -33,8 +47,8 @@ const Skills: FC = () => {
     >
       <SectionHeading>Skills</SectionHeading>
       <Grid gap={3} lg={{ gridTemplateColumns: "1fr 1fr" }}>
-        <GridItem>
-          <Card.Root>
+        <GridItem ref={plRef}>
+          <Card.Root className={`scale-0 ${plRefIsinView ? "scale-1" : ""}`}>
             <Card.Header fontSize="large">Programming Languages</Card.Header>
             <Card.Body>
               <VStack gap={3} alignItems="stretch">
@@ -55,8 +69,8 @@ const Skills: FC = () => {
             </Card.Body>
           </Card.Root>
         </GridItem>
-        <GridItem>
-          <Card.Root>
+        <GridItem ref={wtRef}>
+          <Card.Root className={`scale-0 ${wtRefIsinView ? "scale-1" : ""}`}>
             <Card.Header fontSize="large">Web Technologies</Card.Header>
             <Card.Body>
               <VStack gap={3} alignItems="stretch">
@@ -77,8 +91,11 @@ const Skills: FC = () => {
             </Card.Body>
           </Card.Root>
         </GridItem>
-        <GridItem lg={{ gridColumnStart: "2", gridRowStart: "1" }}>
-          <Card.Root>
+        <GridItem
+          ref={toolsRef}
+          lg={{ gridColumnStart: "2", gridRowStart: "1" }}
+        >
+          <Card.Root className={`scale-0 ${toolsRefIsinView ? "scale-1" : ""}`}>
             <Card.Header fontSize="large">Tools</Card.Header>
             <Card.Body>
               <VStack gap={3} alignItems="stretch">
@@ -99,8 +116,10 @@ const Skills: FC = () => {
             </Card.Body>
           </Card.Root>
         </GridItem>
-        <GridItem>
-          <Card.Root>
+        <GridItem ref={dataBasesRef}>
+          <Card.Root
+            className={`scale-0 ${dataBasesRefIsinView ? "scale-1" : ""}`}
+          >
             <Card.Header fontSize="large">DataBases</Card.Header>
             <Card.Body>
               <VStack gap={3} alignItems="stretch">

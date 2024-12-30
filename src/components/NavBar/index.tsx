@@ -15,31 +15,31 @@ import "./NavBar.css";
 const menus = [
   {
     id: "banner-section",
-    href: "#",
+    href: "#banner-section",
     text: "Home",
     icon: <FaHome />,
   },
   {
     id: "about-section",
-    href: "#",
+    href: "#about-section",
     text: "About",
     icon: <FaUser />,
   },
   {
     id: "skills-section",
-    href: "#",
+    href: "#skills-section",
     text: "Skills",
     icon: <FaLayerGroup />,
   },
   {
     id: "projects-section",
-    href: "#",
+    href: "#projects-section",
     text: "Projects",
     icon: <FaImages />,
   },
   {
     id: "contact-section",
-    href: "#",
+    href: "#contact-section",
     text: "Contact",
     icon: <FaPhoneAlt />,
   },

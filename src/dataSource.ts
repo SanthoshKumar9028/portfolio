@@ -4,6 +4,11 @@ export default {
     fullName: "Santhoshkumar S",
     dob: "06/02/1999",
     role: "Software Developer",
+    roles: [
+      { title: "Senior React Developer" },
+      { title: "MERN Stack Developer" },
+      { title: "Full Stack Developer" },
+    ],
     education: {
       highestDegree: "Master of Computer Application",
     },
