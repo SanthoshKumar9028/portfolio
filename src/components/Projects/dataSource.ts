@@ -1,7 +1,8 @@
-import ptuImage from "@/assets/ptu-image.png";
-import cpImage from "@/assets/convergepoint-project-image.png";
-import quizAppImage from "@/assets/quize-app.png";
-import whoSharedImage from "@/assets/whoshared-image.png";
+import ptuImage from "@/assets/project-images/ptu-image.png";
+import cpImage from "@/assets/project-images/convergepoint-project-image.png";
+import quizAppImage from "@/assets/project-images/quize-app.png";
+import whoSharedImage from "@/assets/project-images/whoshared-image.png";
+import graphQLJSONPlaceholder from "@/assets/project-images/graphql-jsonplaceholder-project.png";
 
 export interface IProject {
   title: string;
@@ -16,6 +17,17 @@ export interface IProject {
 }
 
 export const projects: IProject[] = [
+  {
+    title: "GraphQL JSONPlaceholder API",
+    content:
+      "This project is a GraphQL wrapper for the JSONPlaceholder API, providing a GraphQL interface to interact with the JSONPlaceholder endpoints. The data will be stored in a MongoDB database.",
+    category: "personal",
+    src: graphQLJSONPlaceholder,
+    isRecent: true,
+    link: {
+      github: "https://github.com/SanthoshKumar9028/graphql-jsonplaceholder",
+    },
+  },
   {
     title: "Incident Management Software",
     content:
