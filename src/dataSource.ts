@@ -6,8 +6,8 @@ export default {
     role: "Software Developer",
     roles: [
       { title: "Senior React Developer" },
-      { title: "MERN Stack Developer" },
       { title: "Full Stack Developer" },
+      { title: "Open Source Developer" },
     ],
     education: {
       highestDegree: "Master of Computer Application",

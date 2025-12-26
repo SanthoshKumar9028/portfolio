@@ -57,9 +57,11 @@ const About: FC = () => {
         }`}
       >
         <Text mb="3">
-          Enthusiastic web developer with three years of hands-on expertise in
-          React and Redux for web application development, testing and
-          debugging. Having good knowledge of MERN stack development.
+          Enthusiastic web developer having hands-on expertise in React and
+          Redux for web application development, testing and debugging. Having
+          good knowledge and experience in MERN stack development. I am eager to
+          take on a dynamic UI Developer or Full Stack Developer role to apply
+          my expertise and drive innovation in digital projects.
         </Text>
         <Stack
           gap="7"
@@ -159,17 +161,16 @@ const About: FC = () => {
               </ul>
             </Stack>
             <Text mt="5">
-              Hi I am a MCA graduate, I have a strong knowledge about React and
-              it's related technology. Having good knowledge of MERN Stack
-              Development.
+              I was one of the members in my college Front-End developers team.
+              We build our college's new website. It was launched in 2022. For
+              my valuable contribution for the development I received
+              Certificate of Appreciation from my college.
             </Text>
             <Text mt="5">
-              I was one of the member in my college Front-End develpers team. We
-              build our college new website. It is launched on 2022. Based on my
-              performance, my previous company (FOCUSCRAFT TECH PRIVATE LIMITED)
-              gave me a Star performance award. Eager to take on a dynamic UI
-              Developer or Full Stack Developer role to apply my expertise and
-              drive innovation in digital projects.
+              Based on my performance, my previous company (FOCUSCRAFT TECH
+              PRIVATE LIMITED) gave me a Star performance award. Eager to take
+              on a dynamic UI Developer or Full Stack Developer role to apply my
+              expertise and drive innovation in digital projects.
             </Text>
           </Box>
         </Stack>
@@ -245,11 +246,48 @@ const About: FC = () => {
                   <FaCircle className="color-blink-animation" color="gray" />
                 </CustomTimelineConnector>
                 <TimelineContent>
+                  <TimelineTitle>DELOITTE</TimelineTitle>
+                  <TimelineDescription>
+                    June 2025 - Present | Chennai, Tamil Nadu, India
+                  </TimelineDescription>
+                  <Text>
+                    <span className="bold">PDF Highlight: </span>
+                    Implemented text highlight in pdf using
+                    react-pdf-highlighter.js, created a custom logic to search
+                    and highlight text in pdf using text. In case the text
+                    coordinates are not possible to generate. This custom logic
+                    archives 90% accuracy in highlighting the text.
+                  </Text>
+                  <Text>
+                    <span className="bold">Agile Collaboration: </span>Actively
+                    participated in Agile/Scrum practices, including daily
+                    stand-up meetings and sprint planning. Cross-functional
+                    Teamwork: Collaborated with cross-functional teams,
+                    including designers and backend developers, to deliver
+                    responsive and user-friendly web applications.
+                  </Text>
+                  <Text>
+                    <span className="bold">Serverless Application: </span>Worked
+                    on serverless application that makes use of AWS Api Gateway,
+                    Lambda as backend.
+                  </Text>
+                  <Text>
+                    <span className="bold">AWS: </span>Integrated file download
+                    and upload into S3 functionality. Verified Lambda functions
+                    flow using the CloudWatch logs.
+                  </Text>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <CustomTimelineConnector>
+                  <FaCheckCircle color="green" />
+                </CustomTimelineConnector>
+                <TimelineContent>
                   <TimelineTitle>
                     CONVERGEPOINT TECH PRIVATE LIMITED
                   </TimelineTitle>
                   <TimelineDescription>
-                    June 2024 - Present | Chennai, Tamil Nadu, India
+                    June 2024 - May 2025 | Chennai, Tamil Nadu, India
                   </TimelineDescription>
                   <Text>
                     <span className="bold">SharePoint: </span>Created reusable
@@ -287,20 +325,15 @@ const About: FC = () => {
                     development
                   </Text>
                   <Text>
+                    <span className="bold">NodeJs Development: </span>Worked on
+                    GraphQL API based ExpressJS application that performs
+                    operations on the MongoDB database, like creating shopping
+                    carts, adding items and creating orders.
+                  </Text>
+                  <Text>
                     <span className="bold">Integration Expertise: </span>
                     Integrated backend microservices APIs into UI components,
                     ensuring seamless end-to-end functionality
-                  </Text>
-                  <Text>
-                    <span className="bold">Agile Collaboration: </span>Actively
-                    participated in Agile/Scrum practices, including daily
-                    stand-up meetings and sprint planning.
-                  </Text>
-                  <Text>
-                    <span className="bold">Cross-functional Teamwork: </span>
-                    Collaborated with cross-functional teams, including
-                    designers and backend developers, to deliver responsive and
-                    user-friendly web applications
                   </Text>
                 </TimelineContent>
               </TimelineItem>

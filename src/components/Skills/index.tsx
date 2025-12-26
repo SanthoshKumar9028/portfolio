@@ -1,11 +1,13 @@
 import { FC } from "react";
 import {
+  Box,
   Card,
   Container,
   Grid,
   GridItem,
   HStack,
   ProgressRoot,
+  Stack,
   VStack,
 } from "@chakra-ui/react";
 import {
@@ -16,6 +18,7 @@ import {
 
 import SectionHeading from "../SectionHeading";
 import {
+  clouds,
   dataBases,
   programmingLanguages,
   tools,
@@ -34,6 +37,9 @@ const Skills: FC = () => {
     once: true,
   });
   const [dataBasesRef, dataBasesRefIsinView] = useInViewport<HTMLDivElement>({
+    once: true,
+  });
+  const [cloudsRef, cloudsRefIsinView] = useInViewport<HTMLDivElement>({
     once: true,
   });
 
@@ -116,29 +122,57 @@ const Skills: FC = () => {
             </Card.Body>
           </Card.Root>
         </GridItem>
-        <GridItem ref={dataBasesRef}>
-          <Card.Root
-            className={`scale-0 ${dataBasesRefIsinView ? "scale-1" : ""}`}
-          >
-            <Card.Header fontSize="large">DataBases</Card.Header>
-            <Card.Body>
-              <VStack gap={3} alignItems="stretch">
-                {dataBases.map((item) => (
-                  <ProgressRoot
-                    key={item.label}
-                    value={item.value}
-                    colorPalette="primary"
-                  >
-                    <HStack mb={1} justifyContent="space-between">
-                      <ProgressLabel>{item.label}</ProgressLabel>
-                      <ProgressValueText>{item.value}%</ProgressValueText>
-                    </HStack>
-                    <ProgressBar />
-                  </ProgressRoot>
-                ))}
-              </VStack>
-            </Card.Body>
-          </Card.Root>
+        <GridItem>
+          <Stack gap={3}>
+            <Box ref={dataBasesRef}>
+              <Card.Root
+                className={`scale-0 ${dataBasesRefIsinView ? "scale-1" : ""}`}
+              >
+                <Card.Header fontSize="large">DataBases</Card.Header>
+                <Card.Body>
+                  <VStack gap={3} alignItems="stretch">
+                    {dataBases.map((item) => (
+                      <ProgressRoot
+                        key={item.label}
+                        value={item.value}
+                        colorPalette="primary"
+                      >
+                        <HStack mb={1} justifyContent="space-between">
+                          <ProgressLabel>{item.label}</ProgressLabel>
+                          <ProgressValueText>{item.value}%</ProgressValueText>
+                        </HStack>
+                        <ProgressBar />
+                      </ProgressRoot>
+                    ))}
+                  </VStack>
+                </Card.Body>
+              </Card.Root>
+            </Box>
+            <Box ref={cloudsRef}>
+              <Card.Root
+                className={`scale-0 ${cloudsRefIsinView ? "scale-1" : ""}`}
+              >
+                <Card.Header fontSize="large">Cloud</Card.Header>
+                <Card.Body>
+                  <VStack gap={3} alignItems="stretch">
+                    {clouds.map((item) => (
+                      <ProgressRoot
+                        key={item.label}
+                        value={item.value}
+                        colorPalette="primary"
+                      >
+                        <HStack mb={1} justifyContent="space-between">
+                          <ProgressLabel>{item.label}</ProgressLabel>
+                          <ProgressValueText>{item.value}%</ProgressValueText>
+                        </HStack>
+                        <ProgressBar />
+                      </ProgressRoot>
+                    ))}
+                  </VStack>
+                </Card.Body>
+              </Card.Root>
+            </Box>
+          </Stack>
         </GridItem>
       </Grid>
     </Container>

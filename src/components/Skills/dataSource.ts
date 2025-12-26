@@ -35,3 +35,7 @@ export const dataBases = [
   { label: "MongoDB", value: 82 },
   { label: "MySQL", value: 74 },
 ];
+
+export const clouds = [
+  { label: "AWS", value: 68 },
+];
